@@ -2,545 +2,867 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Blood Longest answer,,,,🩸", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local Tab = Window:MakeTab({
-	Name = "Questions",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+  Name = "Questions",
+  Icon = "rbxassetid://4483345998",
+  PremiumOnly = false
 })
 
 Tab:AddButton({
-	Name = "Edible meat",
-	Callback = function()
-	local args = {
+  Name = "Edible meat",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "chickens nuggets"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a country",
-	Callback = function()
-	local args = {
+  Name = "Name a country",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Unitedstatesofamerica"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a dinosaur",
-	Callback = function()
-	local args = {
+  Name = "Name a dinosaur",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Micropachycephalosaurus"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Country that speak french",
-	Callback = function()
-	local args = {
+  Name = "Country that speak french",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Luxembourg"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Animals that lays egg",
-	Callback = function()
-	local args = {
+  Name = "Animals that lays egg",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "canadiangoose"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "31 days in a month",
-	Callback = function()
-	local args = {
+  Name = "31 days in a month",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "December"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Icecream flavor",
-	Callback = function()
-	local args = {
+  Name = "Icecream flavor",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Chocolate chip cookie dough"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "country in Europe",
-	Callback = function()
-	local args = {
+  Name = "country in Europe",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "United kingdom"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name something that you can climb",
-	Callback = function()
-	local args = {
+  Name = "Name something that you can climb",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Mountain everest"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name Something that you can listen with",
-	Callback = function()
-	local args = {
+  Name = "Name Something that you can listen with",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Headphones"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a Candy type",
-	Callback = function()
-	local args = {
+  Name = "Name a Candy type",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "SourPatchKids"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a room in the house",
-	Callback = function()
-	local args = {
+  Name = "Name a room in the house",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "mastersbedroom"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name something the police use",
-	Callback = function()
-	local args = {
+  Name = "Name something the police use",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "pepperspray"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a peice of clothing",
-	Callback = function()
-	local args = {
+  Name = "Name a peice of clothing",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Long sleeve shirt"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a metal type",
-	Callback = function()
-	local args = {
+  Name = "Name a metal type",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "aluminum"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a tool farmer use",
-	Callback = function()
-	local args = {
+  Name = "Name a tool farmer use",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Wateringcan"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a Roblox YouTuber",
-	Callback = function()
-	local args = {
+  Name = "Name a Roblox YouTuber",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "PrestonPlayz"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a animal with horn",
-	Callback = function()
-	local args = {
+  Name = "Name a animal with horn",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Rhinoceros"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a tree type",
-	Callback = function()
-	local args = {
+  Name = "Name a tree type",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "coconut trees"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name something you can cook with",
-	Callback = function()
-	local args = {
+  Name = "Name something you can cook with",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Microwave oven"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a fruit",
-	Callback = function()
-	local args = {
+  Name = "Name a fruit",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Strawberries"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name something you can find in bathroom",
-	Callback = function()
-	local args = {
+  Name = "Name something you can find in bathroom",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Toilet papers"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a popular desert",
-	Callback = function()
-	local args = {
+  Name = "Name a popular desert",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Strawberry icecream"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Games to play during recess",
-	Callback = function()
-	local args = {
+  Name = "Games to play during recess",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Red light green light"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name something people put in Hamburger",
-	Callback = function()
-	local args = {
+  Name = "Name something people put in Hamburger",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "American cheese"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Firefighter use",
-	Callback = function()
-	local args = {
+  Name = "Firefighter use",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Fire extinguisher"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a Disney main character",
-	Callback = function()
-	local args = {
+  Name = "Name a Disney main character",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Mikeymouse"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a type of furniture",
-	Callback = function()
-	local args = {
+  Name = "Name a type of furniture",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Flat screen television"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name something you can find in bedroom",
-	Callback = function()
-	local args = {
+  Name = "Name something you can find in bedroom",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "Flat screen television"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name something you can find in bathtub",
-	Callback = function()
-	local args = {
+  Name = "Name something you can find in bathtub",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "rubberducks"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a measurement type",
-	Callback = function()
-	local args = {
+  Name = "Name a measurement type",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "centimeters"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a green vegetables",
-	Callback = function()
-	local args = {
+  Name = "Name a green vegetables",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "bellpepper"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a red vegetables",
-	Callback = function()
-	local args = {
+  Name = "Name a red vegetables",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "redbellpepper"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name something you can find in space",
-	Callback = function()
-	local args = {
+  Name = "Name something you can find in space",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "milkywaygalaxy"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name something people put in pizza",
-	Callback = function()
-	local args = {
+  Name = "Name something people put in pizza",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "greenbellpepper"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name something you store in wallet",
-	Callback = function()
-	local args = {
+  Name = "Name something you store in wallet",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "drivers license"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "Name a furniture",
-	Callback = function()
-	local args = {
+  Name = "Name a furniture",
+  Callback = function()
+  local args = {
     [1] = 2,
     [2] = "Answer",
     [3] = "flat screen television"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
-      		print("DONE DUMBASS BITCH")
-  	end    
-})
-
-local Tab = Window:MakeTab({
-	Name = "Credits",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 Tab:AddButton({
-	Name = "AI(Aaron2009)",
-	Callback = function()
-	game.StarterGui:SetCore("SendNotification", {
+  Name = "Name a class you would take in school",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "physical education"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "name a type of flower",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "lily of the valley"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a superhero",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "captain underpants"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a phone brand",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "black berry"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name an old weapon",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "Bow and arrow"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name something you can swim",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "private swimming pool"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name something you see in wedding",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "wedding dress"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a sea animal",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "leather back sea turtle"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a slow animal",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "leatherback sea turtle"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "name something in your mouth",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "tonsils"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "why might someone be running",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "getting chased"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name something you would drink",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "Pink lemonade"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name something sharp",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "Mechanical pencil"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name something you can find in school bag",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "mechanical pencil"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a phone accessory",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "wireless headphones"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a game outside Roblox",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "grand thief auto san andreas"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a nut",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "macadamian nuts"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name something cold",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "refrigerator"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a day in a week",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "Wednesday"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a videogame console",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "Nintendo switch"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a sports you want to play",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "American football"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a famous Roblox game",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "flee the facility"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+Tab:AddButton({
+  Name = "Name a 2D shape",
+  Callback = function()
+  local args = {
+    [1] = 2,
+    [2] = "Answer",
+    [3] = "Parallelogram"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("ReplicaRemoteEvents"):WaitForChild("Replica_ReplicaSignal"):FireServer(unpack(args))
+          print("DONE DUMBASS BITCH")
+    end    
+})
+
+local Tab = Window:MakeTab({
+  Name = "Credits",
+  Icon = "rbxassetid://4483345998",
+  PremiumOnly = false
+})
+
+Tab:AddButton({
+  Name = "g5ai(jerfie22)",
+  Callback = function()
+  game.StarterGui:SetCore("SendNotification", {
                  Title = "Made By";
                  Text = "Aaron Gabriel(Blood Gui)";
                  Icon = "";
                  Duration = 0.3;})
-      		print("DONE DUMBASS BITCH")
-  	end    
+          print("DONE DUMBASS BITCH")
+    end    
 })
 
 OrionLib:Init()
