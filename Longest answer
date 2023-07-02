@@ -539,7 +539,6 @@ Tab:AddButton({
                  Text = "Aaron Gabriel(Blood Gui)";
                  Icon = "";
                  Duration = 0.3;})
-          end)
       		print("DONE DUMBASS BITCH")
   	end    
 })
