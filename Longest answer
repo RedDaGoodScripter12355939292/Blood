@@ -29,3 +29,29 @@ game.StarterGui:SetCore("SendNotification", {
                  Icon = "";
                  Duration = 0.3;})
                  end
+                 
+                 -- Define the desired serial number for the hatch
+local desiredSerialNumber = "944b39a0-40ac-46ae-bf65-36bb242add0b"
+
+-- Find and delete pets with different serial numbers
+local function deleteUnwantedPets()
+    -- Get all pets in the workspace
+    local pets = game.Workspace:GetChildren()
+
+    -- Iterate through the pets and delete those with different serial numbers
+    for _, pet in ipairs(pets) do
+        -- Retrieve the pet's serial number
+        local petSerialNumber = pet.Name -- Assuming the serial number is part of the pet's name
+
+        -- Compare the pet's serial number with the desired hatch's serial number
+        if petSerialNumber ~= desiredSerialNumber then
+            pet:Destroy()
+        end
+    end
+end
+
+-- Call the deleteUnwantedPets function periodically using a loop
+while true do
+    wait() -- Adjust the delay between deletions (in seconds) as needed
+    deleteUnwantedPets()
+end
