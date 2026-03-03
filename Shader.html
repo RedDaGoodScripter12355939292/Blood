@@ -1,0 +1,792 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #131115;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        #c1 {
+            background: #fbf7fe;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #btn {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            z-index: 100;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.8);
+            border: 1px solid #000;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #config {
+            position: fixed;
+            left: 10px;
+            top: 60px;
+            display: none;
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 100;
+            max-width: 90vw;
+        }
+        
+        textarea {
+            width: 80vw;
+            height: 200px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c1"></canvas>
+    <button id="btn">CONFIG</button>
+    <div id="config">
+        <textarea id="kernel" cols="30" rows="10"></textarea>
+        <br />
+        <button id="apply">APPLY</button>
+        <button id="cancel">CANCEL</button>
+    </div>
+    <script>
+    var cx, cy;
+    var glposition;
+    var glright;
+    var glforward;
+    var glup;
+    var glorigin;
+    var glx;
+    var gly;
+    var gllen;
+    var canvas;
+    var gl;
+    var date = new Date();
+    var md = 0,mx,my;
+    var t2,t1 = date.getTime();
+    var mx = 0, my = 0, mx1 = 0, my1 = 0, lasttimen = 0;
+    var ml = 0, mr = 0, mm = 0;
+    var len = 2.5;
+    var ang1 = 2.8;
+    var ang2 = 0.4;
+    var cenx = 0.0;
+    var ceny = 0.0;
+    var cenz = 0.0;
+    
+    // COMPLETELY LEGAL GLSL ES 1.0 - Pure computational terrorism
+    var KERNEL = `
+        // No arrays - just pure, unadulterated computation hell
+        
+        // Function 1: Infinite series approximation with MASSIVE unrolling
+        float seriesHell(vec3 p) {
+            float result = 0.0;
+            
+            // 200 iterations - compiler will unroll into 200 copies
+            for (int i = 0; i < 200; i++) {
+                float fi = float(i) * 0.1;
+                
+                // Primary term
+                float term1 = sin(p.x * fi) * cos(p.y * fi) * sin(p.z * fi);
+                float term2 = cos(p.x * fi * 2.0) * sin(p.y * fi * 2.0) * cos(p.z * fi * 2.0);
+                float term3 = sin(p.x * fi * 3.0 + p.y) * cos(p.y * fi * 3.0 + p.z) * sin(p.z * fi * 3.0 + p.x);
+                
+                result += term1 * term2 * term3 / (fi + 1.0);
+                
+                // Nested loop 1 - 50 iterations
+                for (int j = 0; j < 50; j++) {
+                    float fj = float(j) * 0.05;
+                    
+                    float nterm1 = sin(p.x * fi * fj) * cos(p.y * fi * fj) * tan(p.z * fi * fj);
+                    float nterm2 = cos(p.x * fi * fj * 2.0) * sin(p.y * fi * fj * 2.0) * cos(p.z * fi * fj * 2.0);
+                    
+                    result += nterm1 * nterm2 / (fi * fj + 1.0);
+                    
+                    // Nested loop 2 - 25 iterations
+                    for (int k = 0; k < 25; k++) {
+                        float fk = float(k) * 0.02;
+                        
+                        float nnterm1 = sin(p.x * fi * fj * fk) * cos(p.y * fi * fj * fk);
+                        float nnterm2 = tan(p.z * fi * fj * fk) * sin(p.x * fi * fj * fk * 2.0);
+                        float nnterm3 = cos(p.y * fi * fj * fk * 2.0) * tan(p.z * fi * fj * fk * 2.0);
+                        
+                        result += nnterm1 * nnterm2 * nnterm3 / (fi * fj * fk + 1.0);
+                        
+                        // Nested loop 3 - 10 iterations (4 levels deep!)
+                        for (int l = 0; l < 10; l++) {
+                            float fl = float(l) * 0.01;
+                            
+                            result += sin(p.x * fi * fj * fk * fl) * 
+                                     cos(p.y * fi * fj * fk * fl) * 
+                                     tan(p.z * fi * fj * fk * fl) /
+                                     (fi * fj * fk * fl + 1.0);
+                        }
+                    }
+                }
+            }
+            
+            return result;
+        }
+        
+        // Function 2: Fake ray marching with infinite recursion simulation
+        float rayMarchingHell(vec3 p, int depth) {
+            float result = 0.0;
+            
+            // Simulate recursion with massive unrolling
+            for (int d = 0; d < 50; d++) {
+                vec3 q = p * float(d + 1);
+                
+                // Distance estimation hell
+                float r = length(q);
+                float dist = abs(sin(r * 50.0)) * 0.1;
+                
+                // Marching steps (simulated)
+                for (int step = 0; step < 100; step++) {
+                    float t = float(step) * 0.01;
+                    vec3 rp = q + vec3(t, t * 0.5, t * 0.3);
+                    
+                    // Complex field
+                    float field = sin(rp.x * 30.0) * cos(rp.y * 30.0) * sin(rp.z * 30.0) +
+                                 cos(rp.x * 45.0) * sin(rp.y * 45.0) * cos(rp.z * 45.0) +
+                                 sin(rp.x * 60.0 + rp.y) * cos(rp.y * 60.0 + rp.z) * tan(rp.z * 60.0 + rp.x);
+                    
+                    result += field * dist / float(step + 1);
+                    
+                    // Fake lighting calculation
+                    vec3 grad = vec3(
+                        sin(rp.x * 100.0) * cos(rp.y * 100.0) * sin(rp.z * 100.0),
+                        cos(rp.x * 100.0) * sin(rp.y * 100.0) * cos(rp.z * 100.0),
+                        sin(rp.x * 100.0 + rp.y) * cos(rp.y * 100.0 + rp.z) * sin(rp.z * 100.0 + rp.x)
+                    );
+                    
+                    result += length(grad) * 0.01;
+                }
+            }
+            
+            return result;
+        }
+        
+        // Function 3: Wave interference with 1000 frequencies
+        float waveHell(vec3 p) {
+            float result = 0.0;
+            
+            // 500 primary waves
+            for (int i = 1; i < 500; i++) {
+                float fi = float(i);
+                float freq = fi * 2.0;
+                
+                // Fundamental
+                result += sin(p.x * freq) * cos(p.y * freq) * sin(p.z * freq) / fi;
+                
+                // 1st harmonic
+                result += sin(p.x * freq * 2.0 + p.y) * cos(p.y * freq * 2.0 + p.z) * 
+                         sin(p.z * freq * 2.0 + p.x) / (fi * 2.0);
+                
+                // 2nd harmonic
+                result += sin(p.x * freq * 3.0 - p.y) * cos(p.y * freq * 3.0 - p.z) * 
+                         sin(p.z * freq * 3.0 - p.x) / (fi * 3.0);
+                
+                // Phase shifted
+                for (int j = 1; j < 20; j++) {
+                    float fj = float(j);
+                    float phase = fj * 0.3;
+                    
+                    result += sin(p.x * freq + phase) * cos(p.y * freq + phase) * 
+                             sin(p.z * freq + phase) / (fi * fj);
+                    
+                    // Quadrature
+                    result += cos(p.x * freq + phase) * sin(p.y * freq + phase) * 
+                             cos(p.z * freq + phase) / (fi * fj);
+                }
+            }
+            
+            return result;
+        }
+        
+        // Function 4: Mandelbrot-style but with no early escape (infinite)
+        float mandelbrotHell(vec3 p) {
+            vec3 z = p;
+            float result = 0.0;
+            
+            // 500 iterations - no escape, always runs full
+            for (int i = 0; i < 500; i++) {
+                // Complex square with extra terms
+                z = vec3(
+                    z.x * z.x - z.y * z.y - z.z * z.z + p.x + sin(z.x * z.y * z.z),
+                    2.0 * z.x * z.y + p.y + cos(z.y * z.z * z.x),
+                    2.0 * z.x * z.z + p.z + tan(z.z * z.x * z.y)
+                );
+                
+                // Compute multiple fields
+                float r = length(z);
+                float field1 = sin(r * 100.0) * cos(z.x * 50.0) * sin(z.y * 50.0) * cos(z.z * 50.0);
+                float field2 = cos(r * 150.0) * sin(z.x * 75.0) * cos(z.y * 75.0) * sin(z.z * 75.0);
+                float field3 = tan(r * 200.0) * sin(z.x * 100.0 + z.y) * cos(z.y * 100.0 + z.z) * 
+                              tan(z.z * 100.0 + z.x);
+                
+                result += field1 * field2 * field3 / float(i + 1);
+                
+                // Extra chaos
+                for (int j = 0; j < 20; j++) {
+                    float fj = float(j);
+                    result += sin(z.x * fj * 10.0) * cos(z.y * fj * 10.0) * 
+                             sin(z.z * fj * 10.0) / (float(i + 1) * (fj + 1.0));
+                }
+            }
+            
+            return result;
+        }
+        
+        // Function 5: Polynomial evaluation with 1000 terms
+        float polynomialHell(vec3 p) {
+            float result = 0.0;
+            
+            // 1000-term polynomial
+            for (int i = 0; i < 1000; i++) {
+                float fi = float(i);
+                float powerX = 1.0;
+                float powerY = 1.0;
+                float powerZ = 1.0;
+                
+                // Compute powers
+                for (int px = 0; px < i % 10 + 1; px++) {
+                    powerX *= p.x;
+                }
+                for (int py = 0; py < (i + 3) % 10 + 1; py++) {
+                    powerY *= p.y;
+                }
+                for (int pz = 0; pz < (i + 7) % 10 + 1; pz++) {
+                    powerZ *= p.z;
+                }
+                
+                // Coefficient with trig modulation
+                float coeff = sin(fi * 0.1) * cos(fi * 0.2) * tan(fi * 0.3);
+                
+                result += coeff * powerX * powerY * powerZ / (fi + 1.0);
+                
+                // Cross terms
+                for (int j = 0; j < 50; j++) {
+                    float fj = float(j);
+                    result += sin(p.x * fi + p.y * fj) * cos(p.y * fi + p.z * fj) * 
+                             tan(p.z * fi + p.x * fj) / (fi * fj + 1.0);
+                }
+            }
+            
+            return result;
+        }
+        
+        // MAIN KERNEL - Combine EVERYTHING
+        float kernal(vec3 ver) {
+            float result = 0.0;
+            
+            // Massive 5x5x5 supersampling (125 samples)
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < 5; j++) {
+                    for (int k = 0; k < 5; k++) {
+                        vec3 offset = vec3(float(i) * 0.02, float(j) * 0.02, float(k) * 0.02);
+                        vec3 p = ver + offset;
+                        
+                        // Call ALL hell functions
+                        float f1 = seriesHell(p);
+                        float f2 = rayMarchingHell(p, 10);
+                        float f3 = waveHell(p * 2.0);
+                        float f4 = mandelbrotHell(p * 1.5);
+                        float f5 = polynomialHell(p * 3.0);
+                        
+                        // Combine with complex modulation
+                        result += f1 * 0.2 + f2 * 0.2 + f3 * 0.2 + f4 * 0.2 + f5 * 0.2;
+                        
+                        // Add insane nested modulation
+                        for (int a = 0; a < 20; a++) {
+                            float fa = float(a) * 0.5;
+                            vec3 q = p * fa;
+                            
+                            result += sin(q.x * 200.0) * cos(q.y * 200.0) * sin(q.z * 200.0) / (fa + 1.0);
+                            
+                            for (int b = 0; b < 20; b++) {
+                                float fb = float(b) * 0.3;
+                                vec3 r = q * fb;
+                                
+                                result += cos(r.x * 150.0) * sin(r.y * 150.0) * cos(r.z * 150.0) / (fa * fb + 1.0);
+                                
+                                for (int c = 0; c < 20; c++) {
+                                    float fc = float(c) * 0.2;
+                                    vec3 s = r * fc;
+                                    
+                                    result += tan(s.x * 100.0) * sin(s.y * 100.0) * cos(s.z * 100.0) / (fa * fb * fc + 1.0);
+                                    
+                                    for (int d = 0; d < 10; d++) {
+                                        float fd = float(d) * 0.1;
+                                        result += sin(s.x * fd * 500.0) / (fa * fb * fc * fd + 1.0);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // Normalize and add base geometry for visibility
+            result = result / 3125.0; // 5x5x5x5x5 = 3125 samples
+            
+            // Base shape so we see something
+            float sphere = length(ver) - 1.5;
+            float box = max(abs(ver.x) - 1.0, max(abs(ver.y) - 1.0, abs(ver.z) - 1.0));
+            
+            return result * 0.01 + min(sphere, box) * 0.5;
+        }
+    `;
+
+    var vertshade;
+    var fragshader;
+    var shaderProgram;
+
+    function ontimer() {
+        // Render 20 times per frame (absolute insanity)
+        for (let i = 0; i < 20; i++) {
+            draw();
+            
+            // Memory pressure
+            if (i % 5 == 0) {
+                let garbage = [];
+                for (let j = 0; j < 100000; j++) {
+                    garbage.push(new Date().getTime());
+                }
+            }
+        }
+        window.requestAnimationFrame(ontimer);
+    }
+
+    document.addEventListener("mousedown",
+        function (ev) {
+            var oEvent = ev || event;
+            if (oEvent.button == 0) {
+                ml = 1;
+                mm = 0;
+            }
+            if (oEvent.button == 2) {
+                mr = 1;
+                mm = 0;
+            }
+            mx = oEvent.clientX;
+            my = oEvent.clientY;
+        },
+        false);
+
+    document.addEventListener("mouseup",
+        function (ev) {
+            var oEvent = ev || event;
+            if (oEvent.button == 0) {
+                ml = 0;
+            }
+            if (oEvent.button == 2) {
+                mr = 0;
+            }
+        },
+        false);
+        
+    document.addEventListener("mousemove",
+        function (ev) {
+        var oEvent = ev || event;
+        if (ml == 1) {
+            ang1 += (oEvent.clientX - mx) * 0.002;
+            ang2 += (oEvent.clientY - my) * 0.002;
+            if (oEvent.clientX != mx || oEvent.clientY != my) {
+                mm = 1;
+            }
+        }
+        if (mr == 1) {
+            var l = len * 4.0 / (cx + cy);
+            cenx += l * (-(oEvent.clientX - mx) * Math.sin(ang1) - (oEvent.clientY - my) * Math.sin(ang2) * Math.cos(ang1));
+            ceny += l * ((oEvent.clientY - my) * Math.cos(ang2));
+            cenz += l * ((oEvent.clientX - mx) * Math.cos(ang1) - (oEvent.clientY - my) * Math.sin(ang2) * Math.sin(ang1));
+            if (oEvent.clientX != mx || oEvent.clientY != my) {
+                mm = 1;
+            }
+        }
+        mx = oEvent.clientX;
+        my = oEvent.clientY;
+        },
+        false);
+
+    document.addEventListener("mousewheel",
+        function (ev) {
+            ev.preventDefault();
+            var oEvent = ev || event;
+            len *= Math.exp(-0.001 * oEvent.wheelDelta);
+        },
+        { passive: false });
+
+    document.addEventListener("touchstart",
+        function (ev) {
+            ev.preventDefault();
+            var n = ev.touches.length;
+            if (n == 1) {
+                var oEvent = ev.touches[0];
+                mx = oEvent.clientX;
+                my = oEvent.clientY;
+            }
+            else if (n == 2) {
+                var oEvent = ev.touches[0];
+                mx = oEvent.clientX;
+                my = oEvent.clientY;
+                oEvent = ev.touches[1];
+                mx1 = oEvent.clientX;
+                my1 = oEvent.clientY;
+            }
+            lasttimen = n;
+        },
+        { passive: false });
+        
+    document.addEventListener("touchend",
+        function (ev) {
+            ev.preventDefault();
+            var n = ev.touches.length;
+            if (n == 1) {
+                var oEvent = ev.touches[0];
+                mx = oEvent.clientX;
+                my = oEvent.clientY;
+            }
+            else if (n == 2) {
+                var oEvent = ev.touches[0];
+                mx = oEvent.clientX;
+                my = oEvent.clientY;
+                oEvent = ev.touches[1];
+                mx1 = oEvent.clientX;
+                my1 = oEvent.clientY;
+            }
+            lasttimen = n;
+        },
+        { passive: false });
+
+    document.addEventListener("touchmove",
+        function (ev) {
+            ev.preventDefault();
+            var n = ev.touches.length;
+            if (n == 1&&lasttimen==1) {
+                var oEvent = ev.touches[0];
+                ang1 += (oEvent.clientX - mx) * 0.002;
+                ang2 += (oEvent.clientY - my) * 0.002;
+                mx = oEvent.clientX;
+                my = oEvent.clientY;
+            }
+            else if (n == 2) {
+                var oEvent = ev.touches[0];
+                var oEvent1 = ev.touches[1];
+                var l = len * 2.0 / (cx + cy), l1;
+                cenx += l * (-(oEvent.clientX + oEvent1.clientX - mx - mx1) * Math.sin(ang1) - (oEvent.clientY + oEvent1.clientY - my - my1) * Math.sin(ang2) * Math.cos(ang1));
+                ceny += l * ((oEvent.clientY + oEvent1.clientY - my - my1) * Math.cos(ang2));
+                cenz += l * ((oEvent.clientX + oEvent1.clientX - mx - mx1) * Math.cos(ang1) - (oEvent.clientY + oEvent1.clientY - my - my1) * Math.sin(ang2) * Math.sin(ang1));
+                l1 = Math.sqrt((mx - mx1) * (mx - mx1) + (my - my1) * (my - my1)+1.0);
+                mx = oEvent.clientX;
+                my = oEvent.clientY;
+                mx1 = oEvent1.clientX;
+                my1 = oEvent1.clientY;
+                l = Math.sqrt((mx - mx1) * (mx - mx1) + (my - my1) * (my - my1) + 1.0);
+                len *= l1 / l;
+            }
+            lasttimen = n;
+        },
+        { passive: false });
+
+    document.oncontextmenu = function (event) {
+        if (mm == 1) {
+            event.preventDefault();
+        }
+    };
+
+    function draw() {
+        date = new Date();
+        var t2 = date.getTime();
+        t1 = t2;
+        
+        // Render at 5x resolution
+        for (let scale = 1.0; scale <= 5.0; scale += 0.25) {
+            gl.viewport(0, 0, cx * scale, cy * scale);
+            
+            gl.uniform1f(glx, cx * 2.0 / (cx + cy));
+            gl.uniform1f(gly, cy * 2.0 / (cx + cy));
+            gl.uniform1f(gllen, len);
+            gl.uniform3f(glorigin, len * Math.cos(ang1) * Math.cos(ang2) + cenx, len * Math.sin(ang2) + ceny, len * Math.sin(ang1) * Math.cos(ang2) + cenz);
+            gl.uniform3f(glright, Math.sin(ang1), 0, -Math.cos(ang1));
+            gl.uniform3f(glup, -Math.sin(ang2) * Math.cos(ang1), Math.cos(ang2), -Math.sin(ang2) * Math.sin(ang1));
+            gl.uniform3f(glforward, -Math.cos(ang1) * Math.cos(ang2), -Math.sin(ang2), -Math.sin(ang1) * Math.cos(ang2));
+            
+            // 10 draw calls per pass
+            for (let i = 0; i < 10; i++) {
+                gl.drawArrays(gl.TRIANGLES, 0, 60000);
+            }
+        }
+        
+        gl.finish();
+        
+        // CPU torture
+        for (let i = 0; i < 10000000; i++) {
+            Math.sqrt(Math.sin(i) * Math.cos(i));
+        }
+    }
+
+    window.onresize = function () {
+        cx = window.innerWidth;
+        cy = window.innerHeight;
+        canvas.width = cx;
+        canvas.height = cy;
+        gl.viewport(0, 0, cx, cy);
+    }
+    
+    window.onload = function () {
+        cx = window.innerWidth;
+        cy = window.innerHeight;
+        canvas = document.getElementById('c1');
+        canvas.width = cx;
+        canvas.height = cy;
+        
+        var positions = [];
+        // ULTRA dense mesh (200x200 grid = 80,000 triangles!)
+        let gridSize = 200;
+        for (let i = 0; i < gridSize; i++) {
+            for (let j = 0; j < gridSize; j++) {
+                let x1 = -1.0 + (2.0 * i / gridSize);
+                let y1 = -1.0 + (2.0 * j / gridSize);
+                let x2 = -1.0 + (2.0 * (i + 1) / gridSize);
+                let y2 = -1.0 + (2.0 * (j + 1) / gridSize);
+                
+                positions.push(x1, y1, 0.0);
+                positions.push(x2, y1, 0.0);
+                positions.push(x2, y2, 0.0);
+                
+                positions.push(x1, y1, 0.0);
+                positions.push(x2, y2, 0.0);
+                positions.push(x1, y2, 0.0);
+            }
+        }
+        
+        var VSHADER_SOURCE =
+            "#version 100 \n"+
+            "precision highp float;\n" +
+            "attribute vec4 position;" +
+            "varying vec3 dir, localdir;" +
+            "uniform vec3 right, forward, up, origin;" +
+            "uniform float x,y;" +
+            "void main() {" +
+            "   gl_Position = position; " +
+            "   dir = forward + right * position.x*x + up * position.y*y;" +
+            "   localdir.x = position.x*x;" +
+            "   localdir.y = position.y*y;" +
+            "   localdir.z = -1.0;" +
+            "} ";
+            
+        var FSHADER_SOURCE =
+            "#version 100 \n" +
+            "#define PI 3.14159265358979324\n" +
+            "#define M_L 0.3819660113\n" +
+            "#define M_R 0.6180339887\n" +
+            "#define MAXR 256\n" +
+            "#define SOLVER 256\n" +
+            "#define MAX_STEPS 8000\n" +
+            "#define SAMPLES 128\n" +
+            "#define AA 16\n" +
+            "precision highp float;\n" +
+            "float kernal(vec3 ver);\n" +
+            "uniform vec3 right, forward, up, origin;\n" +
+            "varying vec3 dir, localdir;\n" +
+            "uniform float len;\n" +
+            "vec3 ver;\n" +
+            "int sign;\n"+
+            "float v, v1, v2;\n" +
+            "float r1, r2, r3, r4, m1, m2, m3, m4;\n" +
+            "vec3 n, reflect;\n" +
+            "const float step = 0.0005;\n" +
+            "vec3 color;\n" +
+            
+            "void main() {\n" +
+            "   color.r = 0.0;\n" +
+            "   color.g = 0.0;\n" +
+            "   color.b = 0.0;\n" +
+            "   sign = 0;\n" +
+            
+            // ULTRA supersampling
+            "   for (int a = 0; a < AA; a++) {\n" +
+            "       for (int b = 0; b < AA; b++) {\n" +
+            "           vec2 jitter = vec2(float(a), float(b)) / float(AA) - 0.5;\n" +
+            "           vec3 jitteredDir = dir + right * jitter.x * 0.0005 + up * jitter.y * 0.0005;\n" +
+            
+            "           for (int s = 0; s < SAMPLES; s++) {\n" +
+            "               vec3 sampleDir = jitteredDir;\n" +
+            "               float angle = float(s) * 6.283185 / float(SAMPLES);\n" +
+            "               vec3 offset = right * cos(angle) * 0.0005 + up * sin(angle) * 0.0005;\n" +
+            "               sampleDir = normalize(sampleDir + offset);\n" +
+            
+            "               v1 = kernal(origin + sampleDir * (step*len));\n" +
+            "               v2 = kernal(origin);\n" +
+            
+            "               for (int k = 2; k < MAX_STEPS; k++) {\n" +
+            "                   ver = origin + sampleDir * (step*len*float(k));\n" +
+            "                   v = kernal(ver);\n" +
+            
+            "                   if (v > 0.0 && v1 < 0.0) {\n" +
+            "                       r1 = step * len*float(k - 1);\n" +
+            "                       r2 = step * len*float(k);\n" +
+            "                       m1 = kernal(origin + sampleDir * r1);\n" +
+            "                       m2 = kernal(origin + sampleDir * r2);\n" +
+            "                       for (int l = 0; l < SOLVER; l++) {\n" +
+            "                           r3 = r1 * 0.5 + r2 * 0.5;\n" +
+            "                           m3 = kernal(origin + sampleDir * r3);\n" +
+            "                           if (m3 > 0.0) {\n" +
+            "                               r2 = r3;\n" +
+            "                               m2 = m3;\n" +
+            "                           } else {\n" +
+            "                               r1 = r3;\n" +
+            "                               m1 = m3;\n" +
+            "                           }\n" +
+            "                       }\n" +
+            "                       if (r3 < 2.0 * len) {\n" +
+            "                           sign += a * b * s + 1;\n" +
+            "                           break;\n" +
+            "                       }\n" +
+            "                   }\n" +
+            "                   v2 = v1;\n" +
+            "                   v1 = v;\n" +
+            "               }\n" +
+            "           }\n" +
+            "       }\n" +
+            "   }\n" +
+            
+            "   if (sign > 0) {\n" +
+            "       float sampleFactor = float(sign) / float(AA * AA * SAMPLES);\n" +
+            "       ver = origin + dir*r3;\n" +
+            "       n.x = kernal(ver - right * (r3*0.001)) - kernal(ver + right * (r3*0.001));\n" +
+            "       n.y = kernal(ver - up * (r3*0.001)) - kernal(ver + up * (r3*0.001));\n" +
+            "       n.z = kernal(ver + forward * (r3*0.001)) - kernal(ver - forward * (r3*0.001));\n" +
+            "       r3 = n.x*n.x+n.y*n.y+n.z*n.z;\n" +
+            "       n = n * (1.0 / sqrt(r3));\n" +
+            "       ver = localdir;\n" +
+            "       r3 = ver.x*ver.x+ver.y*ver.y+ver.z*ver.z;\n" +
+            "       ver = ver * (1.0 / sqrt(r3));\n" +
+            "       reflect = n * (-2.0*dot(ver, n)) + ver;\n" +
+            "       r3 = reflect.x*0.276+reflect.y*0.920+reflect.z*0.276;\n" +
+            "       r4 = n.x*0.276+n.y*0.920+n.z*0.276;\n" +
+            "       r3 = max(0.0, r3);\n" +
+            "       r3 = r3 * r3 * r3 * r3;\n" +
+            "       r3 = r3 * 0.45 + r4 * 0.25 + 0.3;\n" +
+            "       \n" +
+            "       color.r = r3 * sampleFactor;\n" +
+            "       color.g = r3 * sampleFactor * 0.8;\n" +
+            "       color.b = r3 * sampleFactor * 0.6;\n" +
+            "   }\n" +
+            
+            "   gl_FragColor = vec4(color.x, color.y, color.z, 1.0);\n" +
+            "}";
+
+        gl = canvas.getContext('webgl', {
+            antialias: true,
+            depth: true,
+            alpha: true,
+            stencil: true,
+            powerPreference: "high-performance",
+            preserveDrawingBuffer: true
+        });
+
+        vertshader = gl.createShader(gl.VERTEX_SHADER);
+        fragshader = gl.createShader(gl.FRAGMENT_SHADER);
+        shaderProgram = gl.createProgram();
+
+        gl.shaderSource(vertshader, VSHADER_SOURCE);
+        gl.compileShader(vertshader);
+        var infov = gl.getShaderInfoLog(vertshader);
+
+        gl.shaderSource(fragshader, FSHADER_SOURCE + KERNEL);
+        gl.compileShader(fragshader);
+        var infof = gl.getShaderInfoLog(fragshader);
+
+        gl.attachShader(shaderProgram, vertshader);
+        gl.attachShader(shaderProgram, fragshader);
+        gl.linkProgram(shaderProgram);
+        gl.useProgram(shaderProgram);
+
+        if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+            var info = gl.getProgramInfoLog(shaderProgram);
+            console.error('Vertex shader log:', infov);
+            console.error('Fragment shader log:', infof);
+            console.error('Program link log:', info);
+            alert('Shader compilation failed. Check console for details.\n\n' + infof);
+            return;
+        }
+
+        glposition = gl.getAttribLocation(shaderProgram, 'position');
+        glright = gl.getUniformLocation(shaderProgram, 'right');
+        glforward = gl.getUniformLocation(shaderProgram, 'forward');
+        glup = gl.getUniformLocation(shaderProgram, 'up');
+        glorigin = gl.getUniformLocation(shaderProgram, 'origin');
+        glx = gl.getUniformLocation(shaderProgram, 'x');
+        gly = gl.getUniformLocation(shaderProgram, 'y');
+        gllen = gl.getUniformLocation(shaderProgram, 'len');
+
+        var buffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+        gl.vertexAttribPointer(glposition, 3, gl.FLOAT, false, 0, 0);
+        gl.enableVertexAttribArray(glposition);
+
+        // Warm up
+        for (let i = 0; i < 10; i++) {
+            draw();
+        }
+        
+        window.requestAnimationFrame(ontimer);
+        
+        document.getElementById("kernel").value = KERNEL;
+        document.getElementById("btn").addEventListener("click", function() {
+            var state = this.innerText == "CONFIG";
+            this.innerText = state ? "HIDE" : "CONFIG";
+            document.getElementById("config").style.display = state ? "block" : "none";
+        });
+        
+        document.getElementById("apply").addEventListener("click", function() {
+            KERNEL = document.getElementById("kernel").value;
+
+            gl.shaderSource(fragshader, FSHADER_SOURCE + KERNEL);
+            gl.compileShader(fragshader);
+            var infof = gl.getShaderInfoLog(fragshader);
+
+            gl.linkProgram(shaderProgram);
+            gl.useProgram(shaderProgram);
+
+            if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+                var info = gl.getProgramInfoLog(shaderProgram);
+                alert(infof + info);
+            }
+
+            glposition = gl.getAttribLocation(shaderProgram, 'position');
+            glright = gl.getUniformLocation(shaderProgram, 'right');
+            glforward = gl.getUniformLocation(shaderProgram, 'forward');
+            glup = gl.getUniformLocation(shaderProgram, 'up');
+            glorigin = gl.getUniformLocation(shaderProgram, 'origin');
+            glx = gl.getUniformLocation(shaderProgram, 'x');
+            gly = gl.getUniformLocation(shaderProgram, 'y');
+            gllen = gl.getUniformLocation(shaderProgram, 'len');
+        });
+        
+        document.getElementById("cancel").addEventListener("click", function() {
+            document.getElementById("kernel").value = KERNEL;
+        });
+    }
+    </script>
+</body>
+</html>
